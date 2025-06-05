@@ -1,5 +1,7 @@
-ref: https://www.fedramp.gov/20x/standards/20x-ksi/
+# fedramp-20x-get-ksis
 
+Scraper and validator for [FedRAMP][] [Key Security Indicators
+(KSIs)][ksis].
 
 ## Setup
 
@@ -57,3 +59,7 @@ $ ./check.py < ksis.json
   "HyperText Markup Language"
 [json schema]: https://json-schema.org/
   "JSON schema"
+[ksis]: https://www.fedramp.gov/
+  "FedRAMP"
+[ksis]: https://www.fedramp.gov/20x/standards/20x-ksi/
+  "FedRAMP 20x Key Security Indicators (KSIs)."
