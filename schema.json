@@ -1,0 +1,76 @@
+{
+  "$id": "https://github.com/fedramp-20x-ksis-20250604.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "type": "object",
+  "description": "Fedramp 20x Key Security Indicators (KSIs).",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version of file format.",
+      "pattern": "^20[0-9]{6}$"
+    },
+
+    "ksis": {
+      "type": "array",
+      "description": "List of KSIs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "KSI identifier",
+            "pattern": "^KSI-([A-Z]{2,10})$"
+          },
+
+          "name": {
+            "type": "string",
+            "description": "KSI name",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+
+          "text": {
+            "type": "string",
+            "description": "KSI description",
+            "minLength": 1,
+            "maxLength": 1024
+          },
+
+          "reqs": {
+            "type": "array",
+            "description": "KSI validation requirements",
+            "items": {
+              "type": "object",
+              "description": "KSI validation requirement",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "description": "Validation requirement identifier.",
+                  "minimum": 1,
+                  "maximum": 100
+                },
+
+                "text": {
+                  "type": "string",
+                  "description": "Validation requirement text.",
+                  "minLength": 1,
+                  "maxLength": 1024
+                }
+              },
+
+              "required": ["id", "text"],
+              "additionalProperties": false
+            }
+          }
+        },
+
+        "required": ["id", "name", "text", "reqs"],
+        "additionalProperties": false
+      }
+    }
+  },
+
+  "required": ["version", "ksis"],
+  "additionalProperties": false
+}
