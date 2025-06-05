@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env python3
 
 #
 # get.py: Scrape HTML-formatted Key Security Indicators (KSIs) from
