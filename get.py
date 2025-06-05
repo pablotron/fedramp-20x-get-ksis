@@ -63,4 +63,4 @@ def fetch(url: str) -> str:
 
 if __name__ == '__main__':
   # fetch html, parse ksis, json-encode, print to stdout
-  print(json.dumps({"version": "20250604", "ksis": parse(fetch(URL))}))
+  print(json.dumps({"version": "20250605", "ksis": parse(fetch(URL))}))
