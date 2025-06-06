@@ -78,7 +78,7 @@ $ ./ksis-csv.py < ksis.json > ksis.csv
   "venv: Python virtual environment module"
 [pip]: https://pypi.org/project/pip/
   "pip: Python package installer"
-[json]: https:/json.org/
+[json]: https://json.org/
   "JavaScript Object Notation"
 [html]: https://en.wikipedia.org/wiki/HTML
   "HyperText Markup Language"
