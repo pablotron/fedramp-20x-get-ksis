@@ -3,6 +3,16 @@
 Scraper and validator for [FedRAMP][] [Key Security Indicators
 (KSIs)][ksis].
 
+## Files
+
+Files in in this repository:
+
+- `check.py`: Validate [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
+- `get.py`: Scrape [HTML][] from [FedRAMP 20x KSIs site][ksis], and print the KSIs as [JSON][] to standard output.
+- `ksis-csv.py`: Read [JSON][] emitted by `get.py` from standard input and write a [CSV][] of KSIs to standard output.
+- `requirements.txt`: [Pip][]-friendly dependencies.
+- `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] produced by `get.py`.
+
 ## Setup
 
 Steps:
@@ -42,6 +52,7 @@ Steps:
 1. Activate virtual environment.
 2. Run `get.py` to parse [HTML][]-formatted KSIs into [JSON][].
 3. Run `check.py` to validate `ksis.json` against [JSON schema][] in `./schema.json`.
+3. Run `ksis-csv.py` to generate a [CSV][] of KSIs.
 
 Example:
 
@@ -57,6 +68,9 @@ $ ./get.py > ksis.json
 
 # validate "ksis.json" against schema
 $ ./check.py < ksis.json
+
+# generate a CSV of KSIs as "ksis.csv"
+$ ./ksis-csv.py < ksis.json > ksis.csv
 ```
 
 [venv]: https://docs.python.org/3/library/venv.html
@@ -77,3 +91,5 @@ $ ./check.py < ksis.json
   "Debian Linux"
 [ubuntu]: https://ubuntu.com/
   "Ubuntu Linux"
+[csv]: https://en.wikipedia.org/wiki/Comma-separated_values
+  "Comma-separated values (CSV)"
