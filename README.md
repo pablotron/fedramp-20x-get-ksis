@@ -22,13 +22,17 @@ documentation.
 
 Steps:
 
-1. Create a virtual environment.
-2. Activate the virtual environment in a subshell.
-3. Install dependencies from `requirements.txt` with [pip][].
+1. [Debian][]/[Ubuntu][]: Install the `python3-pip` and `python3-venv` system packages.
+2. Create a virtual environment with [venv][].
+3. Activate the virtual environment in a subshell.
+4. Install dependencies from `requirements.txt` with [pip][].
 
 Example:
 
 ```sh
+# debian/ubuntu: install python3-pip and python3-venv packages
+$ sudo apt install python3-pip python3-venv
+
 # create svirtual environment
 $ python3 -m venv ./ksis-venv
 
@@ -40,14 +44,6 @@ $ . ./ksis-env/bin/activate
 
 # install dependencies with pip
 (ksis-venv) $ python3 -m pip install -r ./requirements.txt
-```
-
-**Note:** In [Debian][] and [Ubuntu][] you may also need to install the
-`python3-pip` and `python3-venv` packages, like this:
-
-```sh
-# install python3-pip and python3-venv packages
-sudo apt install python3-pip python3-venv
 ```
 
 ## Usage
@@ -62,7 +58,7 @@ Steps:
 Example:
 
 ```sh
-# create subshell
+# create a subshell
 $ bash
 
 # activate virtual environment
@@ -82,7 +78,7 @@ $ ./ksis-csv.py < ksis.json > ksis.csv
   "venv: Python virtual environment module"
 [pip]: https://pypi.org/project/pip/
   "pip: Python package installer"
-[json]: "https:/json.org/"
+[json]: https:/json.org/
   "JavaScript Object Notation"
 [html]: https://en.wikipedia.org/wiki/HTML
   "HyperText Markup Language"
