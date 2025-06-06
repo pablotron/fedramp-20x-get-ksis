@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 
 #
-# check.py: Validate KSIs JSON against schema.
+# check.py: Validate KSIs JSON file against JSON schema.
+#
+# If the given JSON validates, then this script prints "ok" to standard
+# output and returns an exit code of 0.
+#
+# If the given JSON fails validation, then this script prints the
+# validation errors to standard error and returns a non-zero exit code.
 #
 # Usage:
 #
