@@ -1,17 +1,22 @@
 # fedramp-20x-get-ksis
 
-Scraper and validator for [FedRAMP][] [Key Security Indicators
+[Python][] scripts for working with [FedRAMP 20x Key Security Indicators
 (KSIs)][ksis].
 
-## Files
+Scripts in this repository:
 
-Files in in this repository:
+- `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
+- `get.py`: Fetch [HTML][] from the [FedRAMP 20x KSIs site][ksis], extract the KSIs, and print them to standard output as [JSON][].
+- `ksis-csv.py`: Read [JSON][] of KSIs from standard input and write a [CSV][] of KSIs to standard output.
 
-- `check.py`: Validate [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
-- `get.py`: Scrape [HTML][] from [FedRAMP 20x KSIs site][ksis], and print the KSIs as [JSON][] to standard output.
-- `ksis-csv.py`: Read [JSON][] emitted by `get.py` from standard input and write a [CSV][] of KSIs to standard output.
+Other files:
+
+- `ksis.json`: [JSON][] of KSIs from the [FedRAMP 20x KSIs site][ksis] as of 2025-06-05.
 - `requirements.txt`: [Pip][]-friendly dependencies.
-- `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] produced by `get.py`.
+- `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] emitted by `get.py`.
+
+See the [Usage section](#usage "Usage") below for additional
+documentation.
 
 ## Setup
 
@@ -93,3 +98,5 @@ $ ./ksis-csv.py < ksis.json > ksis.csv
   "Ubuntu Linux"
 [csv]: https://en.wikipedia.org/wiki/Comma-separated_values
   "Comma-separated values (CSV)"
+[python]: https://python.org/
+  "Python programming language"
