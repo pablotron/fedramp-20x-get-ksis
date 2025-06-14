@@ -5,7 +5,7 @@ import json, jsonschema, os
 BASE_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 
 def test_check():
-  """test that KSIs validate against top-level JSON schema"""
+  """test that `ksis.json` validates against `schema.json`"""
   # read KSIs from "../ksis.json"
   data = json.load(open(os.path.join(BASE_PATH, 'ksis.json')))
 
