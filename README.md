@@ -5,17 +5,17 @@
 
 Scripts in this repository:
 
-- `get.py`: Fetch [HTML][] from the [FedRAMP 20x KSIs site][ksis], extract the KSIs, and print them to standard output as [JSON][].
+- `get.py`: Fetch [FedRAMP 20x KSIs page][ksis], parse KSIs, then them as [JSON][] to standard output.
 - `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
 - `ksis-csv.py`: Read [JSON][] of KSIs from standard input and write a [CSV][] of KSIs to standard output.
 
-Other files:
+Other stuff:
 
-- `ksishtml/`: [Python][] module for parsing [HTML][] from the [FedRAMP 20x KSIs site][ksis].
-- `test/`: Test suite.
-- `ksis.json`: [JSON][] of KSIs from the [FedRAMP 20x KSIs site][ksis] as of 2025-06-05.
+- `ksishtml/`: [Python][] module for parsing KSIs from [HTML][].
+- `ksis.json`: [JSON][] of KSIs as of 2025-06-05.
 - `requirements.txt`: [Pip][]-friendly dependencies.
 - `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] emitted by `get.py`.
+- `test/`: Test suite.
 
 See the [Usage section](#usage "Usage") below for additional
 documentation.
@@ -28,7 +28,7 @@ Steps:
 2. Create a virtual environment with [venv][].
 3. Activate the virtual environment in a subshell.
 4. Install dependencies from `requirements.txt` with [pip][].
-5. (Optional) Run `pytest` to run the test suite.
+5. (Optional) Run [Pytest][] to run the test suite.
 
 Example:
 
@@ -70,13 +70,13 @@ $ bash
 # activate virtual environment
 $ . ksis-venv/bin/activate
 
-# read KSIs as HTML from URL, write as JSON to "ksis.json"
+# fetch FedRAMP KSIs page, parse KSIs, and write to "ksis.json"
 $ ./get.py > ksis.json
 
 # validate "ksis.json" against schema
 $ ./check.py < ksis.json
 
-# generate a CSV of KSIs as "ksis.csv"
+# read KSIs from "ksis.json" and write CSV to "ksis.csv"
 $ ./ksis-csv.py < ksis.json > ksis.csv
 ```
 
