@@ -1,4 +1,4 @@
-bs4
-lxml
-requests
-jsonschema
+beautifulsoup4 >= 4.13.4
+lxml >= 5.4.0
+requests >= 2.32.3
+jsonschema >= 4.24.0
