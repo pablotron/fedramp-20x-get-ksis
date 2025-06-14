@@ -5,12 +5,14 @@
 
 Scripts in this repository:
 
-- `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
 - `get.py`: Fetch [HTML][] from the [FedRAMP 20x KSIs site][ksis], extract the KSIs, and print them to standard output as [JSON][].
+- `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
 - `ksis-csv.py`: Read [JSON][] of KSIs from standard input and write a [CSV][] of KSIs to standard output.
 
 Other files:
 
+- `ksishtml/`: [Python][] module for parsing [HTML][] from the [FedRAMP 20x KSIs site][ksis].
+- `test/`: Test suite.
 - `ksis.json`: [JSON][] of KSIs from the [FedRAMP 20x KSIs site][ksis] as of 2025-06-05.
 - `requirements.txt`: [Pip][]-friendly dependencies.
 - `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] emitted by `get.py`.
@@ -26,6 +28,7 @@ Steps:
 2. Create a virtual environment with [venv][].
 3. Activate the virtual environment in a subshell.
 4. Install dependencies from `requirements.txt` with [pip][].
+5. (Optional) Run `pytest` to run the test suite.
 
 Example:
 
@@ -40,10 +43,13 @@ $ python3 -m venv ./ksis-venv
 $ bash
 
 # activate virtual environment
-$ . ./ksis-env/bin/activate
+$ . ./ksis-venv/bin/activate
 
 # install dependencies with pip
 (ksis-venv) $ python3 -m pip install -r ./requirements.txt
+
+# run test suite (optional)
+(ksis-venv) $ pytest
 ```
 
 ## Usage
@@ -96,3 +102,5 @@ $ ./ksis-csv.py < ksis.json > ksis.csv
   "Comma-separated values (CSV)"
 [python]: https://python.org/
   "Python programming language"
+[pytest]: https://pytest.org/
+  "Python testing framework"
