@@ -11,14 +11,13 @@ Scripts in this repository:
 
 Other stuff:
 
-- `ksishtml/`: [Python][] module for parsing KSIs from [HTML][].
-- `ksis.json`: [JSON][] of KSIs as of 2025-06-05.
+- `ksihtml/`: Module which parses KSIs from [HTML][].
+- `ksis.json`: KSIs as of 2025-06-05.
 - `requirements.txt`: [Pip][]-friendly dependencies.
-- `schema.json`: [JSON schema][] used by `check.py` to validate [JSON][] emitted by `get.py`.
+- `schema.json`: [JSON schema][].  Used by `check.py` to validate [JSON][] output of `get.py`.
 - `test/`: Test suite.
 
-See the [Usage section](#usage "Usage") below for additional
-documentation.
+See the [Usage section](#usage "Usage") below for additional documentation.
 
 ## Setup
 
@@ -26,9 +25,9 @@ Steps:
 
 1. [Debian][]/[Ubuntu][]: Install the `python3-pip` and `python3-venv` system packages.
 2. Create a virtual environment with [venv][].
-3. Activate the virtual environment in a subshell.
+3. Activate the virtual environment.
 4. Install dependencies from `requirements.txt` with [pip][].
-5. (Optional) Run [Pytest][] to run the test suite.
+5. (Optional) Run the tests with [pytest][].
 
 Example:
 
@@ -68,7 +67,7 @@ Example:
 $ bash
 
 # activate virtual environment
-$ . ksis-venv/bin/activate
+$ . ./ksis-venv/bin/activate
 
 # fetch FedRAMP KSIs page, parse KSIs, and write to "ksis.json"
 $ ./get.py > ksis.json
