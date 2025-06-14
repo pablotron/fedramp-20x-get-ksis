@@ -12,6 +12,7 @@ def test_check():
   # read schema from "../schema.json"
   schema = json.load(open(os.path.join(BASE_PATH, 'schema.json')))
 
+  # validate data against schema
   jsonschema.validate(data, schema)
 
   # assert that generated json matches expected json
