@@ -8,7 +8,7 @@ BASE_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 sys.path.append(BASE_PATH)
 import ksihtml
 
-def test_ksihtml_parse():
+def test_parse():
   """test ksihtml.parse()"""
   # read expected json from "../ksis.json"
   exp = open(os.path.join(BASE_PATH, 'ksis.json')).read()
