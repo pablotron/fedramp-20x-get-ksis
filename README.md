@@ -5,7 +5,7 @@
 
 Scripts in this repository:
 
-- `get.py`: Fetch [FedRAMP 20x KSIs page][ksis], parse KSIs, then them as [JSON][] to standard output.
+- `get.py`: Fetch [FedRAMP 20x KSIs page][ksis], parse KSIs, then print the KSIs to standard output as [JSON][].
 - `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
 - `ksis-csv.py`: Read [JSON][] of KSIs from standard input and write a [CSV][] of KSIs to standard output.
 
