@@ -12,9 +12,8 @@
 
 import json, ksihtml, requests
 
-if __name__ == '__main__':
-  # fetch html, parse ksis
-  ksis = ksihtml.parse(requests.get(ksihtml.URL).text)
+# fetch html, parse ksis
+ksis = ksihtml.parse(requests.get(ksihtml.URL).text)
 
-  # json-encode ksis, print to stdout
-  print(json.dumps({"version": "20250605", "ksis": ksis}))
+# json-encode ksis, print to stdout
+print(json.dumps({"version": "20250605", "ksis": ksis}))
