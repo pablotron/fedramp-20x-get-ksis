@@ -1,2 +1,2 @@
-"""Parse FedRAMP Key Security Indicators (KSIs) HTML into a list of KSIs."""
-from ksihtml.parser import URL, parse
+"""Extract FedRAMP Key Security Indicators (KSIs) from HTML."""
+from ksihtml.parser import parse, SCHEMA_VERSION, URL

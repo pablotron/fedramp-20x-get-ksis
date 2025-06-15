@@ -5,6 +5,9 @@ import bs4, re
 # Fedramp KSIs URL
 URL = 'https://www.fedramp.gov/20x/standards/20x-ksi/'
 
+# Schema version
+SCHEMA_VERSION = '20250605'
+
 def next_p(e: bs4.Tag) -> bs4.Tag|None:
   """skip to next sibling <p> in this section or return None"""
   while e is not None and e.name != 'p':
