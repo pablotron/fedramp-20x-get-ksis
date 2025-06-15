@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 #
-# ksis-csv.py: Read JSON-formatted KSIs from standard input and
-# write a CSV of KSIs on standard output.
+# to-csv.py: Read JSON of KSIs from standard input, write CSV to
+# standard output.
 #
 # Example:
 #
-#   # generate ksis.csv from ksis.json
-#   $ ksis-csv.py < ksis.json > ksis.csv
+#   # generate "ksis.csv" from "ksis.json"
+#   $ ./to-csv.py < ksis.json > ksis.csv
 #
 
 # load libraries
