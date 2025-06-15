@@ -5,9 +5,9 @@
 
 Scripts in this repository:
 
-- `get.py`: Fetch [FedRAMP 20x KSIs page][ksis], parse KSIs, then print the KSIs to standard output as [JSON][].
-- `check.py`: Check [JSON][] emitted by `get.py` against [JSON schema][] in `schema.json`.
-- `ksis-csv.py`: Read [JSON][] of KSIs from standard input and write a [CSV][] of KSIs to standard output.
+- `get.py`: Fetch and [FedRAMP 20x KSIs page][ksis], then print the KSIs as [JSON][].
+- `check.py`: Check [JSON][] of KSIs against [JSON schema][] in `schema.json`.
+- `to-csv.py`: Read KSIs as [JSON][] then print a [CSV][] of KSIs.
 
 Other stuff:
 
@@ -58,7 +58,7 @@ Steps:
 1. Activate virtual environment.
 2. Run `get.py` to parse [HTML][]-formatted KSIs into [JSON][].
 3. Run `check.py` to validate `ksis.json` against [JSON schema][] in `./schema.json`.
-3. Run `ksis-csv.py` to generate a [CSV][] of KSIs.
+3. Run `to-csv.py` to generate a [CSV][] of KSIs.
 
 Example:
 
@@ -75,8 +75,8 @@ $ ./get.py > ksis.json
 # validate "ksis.json" against schema
 $ ./check.py < ksis.json
 
-# read KSIs from "ksis.json" and write CSV to "ksis.csv"
-$ ./ksis-csv.py < ksis.json > ksis.csv
+# read from "ksis.json" and write CSV to "ksis.csv"
+$ ./to-csv.py < ksis.json > ksis.csv
 ```
 
 [venv]: https://docs.python.org/3/library/venv.html
