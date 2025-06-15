@@ -2,3 +2,4 @@ Session.vim
 .*.sw?
 venv
 old
+**/__pycache__
