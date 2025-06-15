@@ -17,7 +17,7 @@ def test_parse():
   ksis = ksihtml.parse(gzip.open(os.path.join(BASE_PATH, 'test', 'index.html.gz')).read())
 
   # encode ksis as json and append newline
-  got = json.dumps({"version": "20250605", "ksis": ksis}) + "\n"
+  got = json.dumps({"version": ksihtml.SCHEMA_VERSION, "ksis": ksis}) + "\n"
 
   # assert that generated json matches expected json
   assert(got == exp)
