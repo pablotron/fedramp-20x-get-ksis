@@ -16,4 +16,4 @@ import json, ksihtml, requests
 ksis = ksihtml.parse(requests.get(ksihtml.URL).text)
 
 # json-encode ksis, print to stdout
-print(json.dumps({"version": "20250605", "ksis": ksis}))
+print(json.dumps({"version": ksihtml.SCHEMA_VERSION, "ksis": ksis}))
